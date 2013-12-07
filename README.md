@@ -3,7 +3,7 @@ json-to-csv
 
 *Nested JSON to CSV Converter.*
 
-This python script converts valid, preformatted JSON to CSV which can be opened in excel and similar applications.
+This python script converts valid, preformatted JSON to CSV which can be opened in excel and other similar applications.
 This script can handle nested json with multiple objects and arrays.
 Please see the explanation below and the sample files to understand how this works.
 It can handle non similar objects too. But, more the similarity of the objects, prettier the output.
@@ -12,7 +12,10 @@ Written in Python 2.7
 
 Usage
 -----
+
+```
 python /path/to/json_to_csv.py node_name json_in_file_path csv_out_file_path 
+```
 
 Source Specification
 --------------------
