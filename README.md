@@ -26,7 +26,7 @@ The script expects the json to be given via a file containing
 
 Ex:-
 
-```
+```python
 	{
 	    "node":[
 	        {
@@ -56,3 +56,7 @@ Gotchas
 -------
 I have written a JSON generator which will take care of encoding issues and generate a valid JSON for this tool. 
 However, If you find yourself in the character encoding hell, drop me a mail and I will add support for this.
+
+Read More
+---------
+Visit http://askvinay.com/index.php?id=13&title=Converting-Nested-JSON-to-CSV to read more about this script.
