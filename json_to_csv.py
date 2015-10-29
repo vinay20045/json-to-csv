@@ -49,6 +49,13 @@ import csv
 #   "node_item_5_sub_item_2_0":"sub_item_value_13"
 # }
 ##
+def to_string(s):
+    try:
+        return str(s)
+    except:
+        #Change the encoding type if needed
+        return s.encode('utf-8')
+
 def reduce_item(key, value):
     global reduced_item
     
@@ -56,18 +63,18 @@ def reduce_item(key, value):
     if type(value) is list:
         i=0
         for sub_item in value:
-            reduce_item(key+'_'+str(i), sub_item)
+            reduce_item(key+'_'+to_string(i), sub_item)
             i=i+1
 
     #Reduction Condition 2
     elif type(value) is dict:
         sub_keys = value.keys()
         for sub_key in sub_keys:
-            reduce_item(key+'_'+str(sub_key), value[sub_key])
+            reduce_item(key+'_'+to_string(sub_key), value[sub_key])
     
     #Base Condition
     else:
-        reduced_item[str(key)] = str(value)
+        reduced_item[to_string(key)] = to_string(value)
 
 
 if __name__ == "__main__":
