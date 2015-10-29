@@ -55,7 +55,7 @@ Ex:-
 Gotchas
 -------
 I have written a JSON generator which will take care of encoding issues and generate a valid JSON for this tool. 
-However, If you find yourself in the character encoding hell, drop me a mail and I will add support for this.
+~~However, If you find yourself in the character encoding hell, drop me a mail and I will add support for this~~ This is now fixed.
 
 Read More
 ---------
