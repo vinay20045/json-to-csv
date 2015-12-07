@@ -59,4 +59,4 @@ I have written a JSON generator which will take care of encoding issues and gene
 
 Read More
 ---------
-Visit http://askvinay.com/index.php?id=13&title=Converting-Nested-JSON-to-CSV to read more about this script.
+Visit http://askvinay.com/#post?Converting-Nested-JSON-to-CSV to read more about this script.
