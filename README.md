@@ -72,6 +72,7 @@ Ex:-
         }
     ]
 ```
+* `node_name` can be any relevant string if the JSON is a list of dictionaries
 
 Gotchas
 -------
