@@ -1,0 +1,44 @@
+[
+    {
+        "name":"Apple",
+        "binomial name":"Malus domestica",
+        "major_producers":[
+            "China", 
+            "United States", 
+            "Turkey"
+        ],
+        "nutrition":{
+            "carbohydrates":"13.81g",
+            "fat":"0.17g",
+            "protein":"0.26g"
+        }
+    },
+    {
+        "name":"Orange",
+        "binomial name":"Citrus x sinensis",
+        "major_producers":[
+            "Brazil", 
+            "United States", 
+            "India"
+        ],
+        "nutrition":{
+            "carbohydrates":"11.75g",
+            "fat":"0.12g",
+            "protein":"0.94g"
+        }
+    },
+    {
+        "name":"Mango",
+        "binomial name":"Mangifera indica",
+        "major_producers":[
+            "India", 
+            "China", 
+            "Thailand"
+        ],
+        "nutrition":{
+            "carbohydrates":"15g",
+            "fat":"0.38g",
+            "protein":"0.82g"
+        }
+    }
+]
