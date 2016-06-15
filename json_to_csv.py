@@ -26,6 +26,17 @@ import json
 import csv
 
 ##
+# Convert to string keeping encoding in mind...
+##
+def to_string(s):
+    try:
+        return str(s)
+    except:
+        #Change the encoding type if needed
+        return s.encode('utf-8')
+
+
+##
 # This function converts an item like 
 # {
 #   "item_1":"value_11",
@@ -49,13 +60,6 @@ import csv
 #   "node_item_5_sub_item_2_0":"sub_item_value_13"
 # }
 ##
-def to_string(s):
-    try:
-        return str(s)
-    except:
-        #Change the encoding type if needed
-        return s.encode('utf-8')
-
 def reduce_item(key, value):
     global reduced_item
     
@@ -90,9 +94,14 @@ if __name__ == "__main__":
         json_value = fp.read()
         raw_data = json.loads(json_value)
 
+        try:
+            data_to_be_processed = raw_data[node]
+        except:
+            data_to_be_processed = raw_data
+
         processed_data = []
         header = []
-        for item in raw_data[node]:
+        for item in data_to_be_processed:
             reduced_item = {}
             reduce_item(node, item)
 
