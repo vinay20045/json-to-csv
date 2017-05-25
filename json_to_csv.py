@@ -1,26 +1,3 @@
-##
-# This is as simple as a license can get. Please read 
-# carefully and understand before using.
-#
-# I wrote this script because I needed it. I am opening
-# up the source code to the world because I believe in 
-# the power of royalty free knowledge and shared ideas.
-#
-# 1. This piece of code comes to you at no cost and no 
-#    obligations.
-# 2. You get NO WARRANTIES OR GUARANTEES OR PROMISES of
-#    any kind.
-# 3. If you are using this script you understand the risks
-#    completely.
-# 4. I request and insist that you retain this notice without
-#    modification, but if you can't... I understand.
-#
-# --
-# Vinay Kumar N P 
-# vinay@askvinay.com
-# www.askVinay.com
-##
-
 import sys
 import json
 import csv
