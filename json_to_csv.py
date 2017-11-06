@@ -60,7 +60,7 @@ def reduce_item(key, value):
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print "\nUsage: python json_to_csv.py <node_name> <json_in_file_path> <csv_out_file_path>\n"
+        print ("\nUsage: python json_to_csv.py <node_name> <json_in_file_path> <csv_out_file_path>\n")
     else:
         #Reading arguments
         node = sys.argv[1]
@@ -89,10 +89,10 @@ if __name__ == "__main__":
         header = list(set(header))
         header.sort()
 
-        with open(csv_file_path, 'wb+') as f:
+        with open(csv_file_path, 'w+') as f:
             writer = csv.DictWriter(f, header, quoting=csv.QUOTE_ALL)
             writer.writeheader()
             for row in processed_data:
                 writer.writerow(row)
 
-        print "Just completed writing csv file with %d columns" % len(header)
+        print ("Just completed writing csv file with %d columns" % len(header))
