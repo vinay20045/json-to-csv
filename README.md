@@ -7,7 +7,7 @@ This python script converts valid, preformatted JSON to CSV which can be opened 
 This script can handle nested json with multiple objects and arrays.
 Please see the explanation below and the sample files to understand how this works. It can handle non similar objects too. But, more the similarity of the objects, prettier the output.
 
-Written in Python 2.7
+Written in Python 2.7. Last tested in Python 3.6.3.
 
 Usage
 -----
