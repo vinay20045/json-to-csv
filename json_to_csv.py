@@ -70,7 +70,7 @@ if __name__ == "__main__":
         fp = open(json_file_path, 'r')
         json_value = fp.read()
         raw_data = json.loads(json_value)
-
+        fp.close()
         try:
             data_to_be_processed = raw_data[node]
         except:
