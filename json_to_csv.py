@@ -71,6 +71,7 @@ if __name__ == "__main__":
         json_value = fp.read()
         raw_data = json.loads(json_value)
         fp.close()
+        
         try:
             data_to_be_processed = raw_data[node]
         except:
