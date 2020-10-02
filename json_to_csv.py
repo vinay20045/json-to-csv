@@ -1,6 +1,7 @@
 import sys
 import json
 import csv
+import io
 
 ##
 # Convert to string keeping encoding in mind...
@@ -67,10 +68,9 @@ if __name__ == "__main__":
         json_file_path = sys.argv[2]
         csv_file_path = sys.argv[3]
 
-        fp = open(json_file_path, 'r')
-        json_value = fp.read()
-        raw_data = json.loads(json_value)
-        fp.close()
+        with io.open(json_file_path, 'r', encoding='utf-8-sig') as fp:
+            json_value = fp.read()
+            raw_data = json.loads(json_value)
         
         try:
             data_to_be_processed = raw_data[node]
