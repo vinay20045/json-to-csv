@@ -59,8 +59,9 @@ def reduce_item(key, value):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
+    if len(sys.argv) < 4:
         print ("\nUsage: python json_to_csv.py <node> <json_in_file_path> <csv_out_file_path>\n")
+        print('Usage with limited fields: python json_to_csv.py <node> <json_in_file_path> <csv_out_file_path> <field1> <field2>')
     else:
         #Reading arguments
         node = sys.argv[1]
@@ -79,7 +80,22 @@ if __name__ == "__main__":
 
         processed_data = []
         header = []
+
+        acceptable_keys = []
+        #reading the field that needs to be saved
+        if len(sys.argv) > 4:
+            for i in range(4,len(sys.argv)):
+                acceptable_keys.append(sys.argv[i])
+            print('Only copying from: ',end='')
+            print(acceptable_keys)
+
         for item in data_to_be_processed:
+            if len(sys.argv) > 4:
+                all_keys = list(item.keys())
+                delete_keys = list(set(all_keys)-set(acceptable_keys))
+                for key in delete_keys:  #delete the keys not mentioned in command line
+                    del item[key]
+            
             reduced_item = {}
             reduce_item(node, item)
 
