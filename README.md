@@ -81,4 +81,4 @@ I have written a JSON generator which will take care of encoding issues and gene
 
 Read More
 ---------
-Visit http://askvinay.com/#post?Converting-Nested-JSON-to-CSV to read more about this script.
+Visit [converting nested json to csv post on my blog](https://askvinay.com/post/converting-nested-json-to-csv-8-december-2013.html) to read more about this script.
