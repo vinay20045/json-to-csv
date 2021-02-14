@@ -13,6 +13,14 @@ def to_string(s):
         #Change the encoding type if needed
         return s.encode('utf-8')
 
+def sorted_nicely(l):
+    """
+    Sort the given iterable in the way that humans expect.
+    https://stackoverflow.com/a/2669120
+    """
+    convert = lambda text: int(text) if text.isdigit() else text
+    alphanum_key = lambda key: [convert(c) for c in re.split("([0-9]+)", key)]
+    return sorted(l, key=alphanum_key)
 
 ##
 # This function converts an item like 
@@ -88,7 +96,7 @@ if __name__ == "__main__":
             processed_data.append(reduced_item)
 
         header = list(set(header))
-        header.sort()
+        header = sorted_nicely(header)
 
         with open(csv_file_path, 'w+') as f:
             writer = csv.DictWriter(f, header, quoting=csv.QUOTE_ALL)
