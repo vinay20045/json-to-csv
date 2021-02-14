@@ -59,14 +59,34 @@ def reduce_item(key, value):
         reduced_item[to_string(key)] = to_string(value)
 
 
+def get_quote_policy(policy):
+    pol = str(policy).lower()
+    if pol in ('0', 'minimal'):
+        return csv.QUOTE_MINIMAL
+    if pol in ('2','none'):
+        return csv.QUOTE_NONE
+    if pol in ('3', 'nonnumeric'):
+        return csv.QUOTE_NONNUMERIC
+
+    #default behaviour
+    return csv.QUOTE_ALL
+
+
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print ("\nUsage: python json_to_csv.py <node> <json_in_file_path> <csv_out_file_path>\n")
+    if len(sys.argv) < 4:
+        print ("\nUsage: python json_to_csv.py <node> <json_in_file_path> <csv_out_file_path> [delimiter] [quote_strategy]\n")
     else:
         #Reading arguments
         node = sys.argv[1]
         json_file_path = sys.argv[2]
         csv_file_path = sys.argv[3]
+        d_delimiter = ',' #default delimiter
+        q_quote_policy = csv.QUOTE_ALL
+
+        if len(sys.argv)>4:
+            d_delimiter = sys.argv[4]
+        if len(sys.argv)>5:
+            q_quote_policy = get_quote_policy(sys.argv[5])
 
         with io.open(json_file_path, 'r', encoding='utf-8-sig') as fp:
             json_value = fp.read()
@@ -91,7 +111,7 @@ if __name__ == "__main__":
         header.sort()
 
         with open(csv_file_path, 'w+') as f:
-            writer = csv.DictWriter(f, header, quoting=csv.QUOTE_ALL)
+            writer = csv.DictWriter(f, header, delimiter=d_delimiter, quoting=q_quote_policy)
             writer.writeheader()
             for row in processed_data:
                 writer.writerow(row)
