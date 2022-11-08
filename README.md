@@ -16,6 +16,13 @@ Usage
 python /path/to/json_to_csv.py node json_in_file_path csv_out_file_path
 ```
 
+
+If you want to run the script via a jupyter notebook, you can use code below:
+
+```
+!python "json_to_csv.py" "STATION" "metadata.json" "metadata__2.csv"
+```
+
 Source Specification
 --------------------
 The script expects the json to be given via a file containing 

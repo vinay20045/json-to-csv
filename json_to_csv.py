@@ -90,7 +90,7 @@ if __name__ == "__main__":
         header = list(set(header))
         header.sort()
 
-        with open(csv_file_path, 'w+') as f:
+        with open(csv_file_path, 'w+', newline='') as f:
             writer = csv.DictWriter(f, header, quoting=csv.QUOTE_ALL)
             writer.writeheader()
             for row in processed_data:
